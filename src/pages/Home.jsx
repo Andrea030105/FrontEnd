@@ -1,0 +1,8 @@
+// src/pages/Home.jsx
+function Home() {
+  return (
+    <h1 className="text-4xl font-bold text-gray-900 mb-4">Welcome to Home</h1>
+  );
+}
+
+export default Home;
