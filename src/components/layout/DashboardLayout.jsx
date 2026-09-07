@@ -27,10 +27,17 @@ export default function DashboardLayout() {
             </NavLink>
           </nav>
         </div>
-
-        <Button variant="danger" className="w-full" onClick={logout}>
-          Logout
-        </Button>
+        <div className="flex flex-col gap-2">
+          <NavLink
+            to="/"
+            className="block rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200 bg-sky-500 text-white text-center"
+          >
+            Home
+          </NavLink>
+          <Button variant="danger" className="w-full" onClick={logout}>
+            Logout
+          </Button>
+        </div>
       </aside>
       <div className="flex-1 p-8">
         <Outlet />

@@ -114,7 +114,9 @@ export default function DashboardItems() {
     <div>
       <div>
         {" "}
-        <Button onClick={handleCreateItem}>Add Item</Button>
+        <Button onClick={handleCreateItem} className="w-50">
+          Add Item
+        </Button>
       </div>
 
       <div className="bg-white rounded-lg shadow-md">

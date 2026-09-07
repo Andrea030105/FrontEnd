@@ -78,7 +78,7 @@ export default function Login() {
           </Button>
           <NavLink
             to="/"
-            className="w-full bg-gray-200 hover:bg-gray-300 text-gray-900 focus:ring-gray-500 inline-flex items-center justify-center font-medium rounded-md focus:outline-none focus:ring-2 p-2"
+            className="w-full py-1.5 bg-white text-black hover:bg-gray-300  focus:ring-blue-500 inline-flex items-center justify-center font-medium rounded-md focus:outline-none focus:ring-2 hover:cursor-pointer"
           >
             Home
           </NavLink>
