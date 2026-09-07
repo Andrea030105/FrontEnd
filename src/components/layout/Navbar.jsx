@@ -4,7 +4,7 @@ import { useAuth } from "../../context/AuthContext";
 function Navbar() {
   const { isAuthenticated, logout } = useAuth();
   return (
-    <nav className="bg-blue-400 p-3">
+    <nav className="bg-linear-to-r from-cyan-500 to-blue-500 p-3">
       <div className="flex items-center justify-around">
         <div className="bg-blue-300 p-2 rounded">
           <Link to="/">MyApp</Link>
