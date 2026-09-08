@@ -1,1 +1,24 @@
 @import "tailwindcss";
+
+@theme {
+  --color-primary-blue: #2f6fed;
+  --color-primary-dark: #1e4fc4;
+  --color-cyan-accent: #38bdf8;
+  --color-navy-profondo: #0e1826;
+
+  --color-text-navy: #17233b;
+  --color-text-muted: #5b6577;
+  --color-text-soft: #8891a0;
+
+  --color-border: #e3e7ee;
+  --color-background: #f3f5f9;
+  --color-surface: #ffffff;
+
+  --color-badge-sconto-bg: #c9f7e9;
+  --color-badge-sconto-testo: #0e6b54;
+}
+
+:root {
+  --gradiente-brand-from: #22d3ee;
+  --gradiente-brand-to: #2f6fed;
+}

@@ -21,7 +21,7 @@ function Navbar() {
   ];
 
   return (
-    <nav className="h-20 w-full container mx-auto bg-white rounded-2xl flex items-center justify-between px-5">
+    <nav className="h-20 w-full container mx-auto bg-surface rounded-2xl flex items-center justify-between px-5">
       <Link to="/">
         <img src="../../../public/logo/logo.png" alt="logo" className="w-40" />
       </Link>
@@ -33,7 +33,7 @@ function Navbar() {
             to={label.route}
             className={({ isActive }) =>
               `relative font-semibold transition-colors ${
-                isActive ? "text-[#38BDF8]" : "text-[#5B6577]"
+                isActive ? "text-cyan-accent" : "text-text-muted"
               }`
             }
           >
@@ -52,7 +52,10 @@ function Navbar() {
         {isAuthenticated ? (
           <>
             <div className="flex items-center  gap-3">
-              <NavLink to="/dashboard" className="text-[#38BDF8] font-semibold">
+              <NavLink
+                to="/dashboard"
+                className="text-cyan-accent font-semibold"
+              >
                 Dashbord
               </NavLink>
               <button
@@ -67,15 +70,15 @@ function Navbar() {
           <>
             <NavLink
               to="/login"
-              className="flex gap-3 bg-transparent border border-[#E3E7EE] rounded-2xl px-4 py-2 text-[#5B6577]"
+              className="flex gap-3 bg-transparent border border-border rounded-2xl px-4 py-2 text-text-muted"
             >
-              <User className="text-[#38BDF8]" /> Login
+              <User className="text-cyan-accent" /> Login
             </NavLink>
             <NavLink
               to="/"
-              className="flex ms-3 gap-3 bg-transparent border border-[#E3E7EE] rounded-2xl px-4 py-2 text-[#5B6577]"
+              className="flex ms-3 gap-3 bg-transparent border border-border rounded-2xl px-4 py-2 text-text-muted"
             >
-              <ShoppingCart className="text-[#38BDF8]" /> Cart
+              <ShoppingCart className="text-cyan-accent" /> Cart
             </NavLink>
           </>
         )}

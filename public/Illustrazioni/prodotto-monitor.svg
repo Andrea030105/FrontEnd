@@ -1,0 +1,41 @@
+<svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="mn-screen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B1B2E"/>
+      <stop offset="50%" stop-color="#164A6E"/>
+      <stop offset="100%" stop-color="#22D3EE"/>
+    </linearGradient>
+    <linearGradient id="mn-bezel" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#222D3F"/>
+      <stop offset="100%" stop-color="#0E1826"/>
+    </linearGradient>
+    <linearGradient id="mn-stand" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#C7CEDB"/>
+      <stop offset="100%" stop-color="#9AA3B5"/>
+    </linearGradient>
+    <filter id="mn-shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#0B1B2E" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+
+  <ellipse cx="100" cy="146" rx="52" ry="6" fill="#0B1B2E" opacity="0.10"/>
+
+  <g filter="url(#mn-shadow)">
+    <rect x="18" y="14" width="164" height="98" rx="10" fill="url(#mn-bezel)"/>
+    <rect x="26" y="21" width="148" height="84" rx="5" fill="url(#mn-screen)"/>
+
+    <!-- dashboard sullo schermo -->
+    <rect x="33" y="62" width="26" height="34" rx="3" fill="#FFFFFF" opacity="0.14"/>
+    <rect x="63" y="48" width="26" height="48" rx="3" fill="#FFFFFF" opacity="0.20"/>
+    <rect x="93" y="70" width="26" height="26" rx="3" fill="#FFFFFF" opacity="0.14"/>
+    <path d="M33 40 L52 30 L70 38 L90 26 L110 34 L130 24 L152 32" fill="none" stroke="#7DE3F4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
+    <circle cx="163" cy="30" r="2" fill="#FFFFFF" opacity="0.4"/>
+
+    <!-- camera webcam -->
+    <circle cx="100" cy="17" r="1.6" fill="#0B1B2E" opacity="0.6"/>
+
+    <!-- piede e base -->
+    <path d="M92 112 L108 112 L112 132 L88 132 Z" fill="url(#mn-stand)"/>
+    <rect x="66" y="132" width="68" height="8" rx="4" fill="url(#mn-stand)"/>
+  </g>
+</svg>
