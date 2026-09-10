@@ -3,7 +3,6 @@ import { ArrowDownRight } from "lucide-react";
 import Card from "../components/ui/Card";
 import { useProducts } from "../context/ProductsContext";
 import { NavLink } from "react-router-dom";
-import { useEffect, useState } from "react";
 import { useKart } from "../context/KartContext";
 
 export default function Home() {
@@ -46,8 +45,15 @@ export default function Home() {
             Scopri i dispositivi che ispirano il tuo prossimo passo.
           </p>
           <div className="flex gap-5">
-            <Button className="w-40 h-10">Acquista ora</Button>
-            <Button className="w-40 h-10" variant="outlineBlu">
+            <Button as="anchor" to="#products" className="w-40 h-10">
+              Acquista ora
+            </Button>
+            <Button
+              as="link"
+              to="/about"
+              className="w-40 h-10"
+              variant="outlineBlu"
+            >
               Scopri di più
             </Button>
           </div>
@@ -74,7 +80,7 @@ export default function Home() {
         </div>
       </section>
       {/* FEATURED PRODUCTS */}
-      <section className="bg-background py-4 my-5 rounded-2xl">
+      <section id="products" className="bg-background py-4 my-5 rounded-2xl">
         <div className="flex flex-wrap justify-around items-center">
           {items.map((item) => (
             <Card key={item.id} size="md" className="my-3">

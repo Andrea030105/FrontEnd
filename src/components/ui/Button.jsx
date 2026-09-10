@@ -1,4 +1,5 @@
 import { Loader2 } from "lucide-react";
+import { NavLink } from "react-router-dom";
 
 export default function Button({
   children,
@@ -7,6 +8,8 @@ export default function Button({
   disabled = false,
   loading = false,
   className = "",
+  as = "button",
+  to,
   ...props
 }) {
   const baseClasses =
@@ -34,6 +37,25 @@ export default function Button({
     disabled || loading ? "opacity-50 cursor-not-allowed" : "";
 
   const classes = `${baseClasses} ${variants[variant]} ${sizes[size]} ${disabledClasses} ${className}`;
+
+  if (as === "link") {
+    return (
+      <NavLink to={to} className={classes} {...props}>
+        {loading && <Loader2 className="animate-spin" />}
+        {children}
+      </NavLink>
+    );
+  }
+
+  if (as === "anchor") {
+    return (
+      <a href={to} className={classes} {...props}>
+        {loading && <Loader2 className="animate-spin" />}
+        {children}
+      </a>
+    );
+  }
+
   return (
     <button className={classes} disabled={disabled || loading} {...props}>
       {loading && <Loader2 className="animate-spin" />}
