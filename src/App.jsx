@@ -13,6 +13,7 @@ import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import DashboardItems from "./pages/DashboardItems";
 import StoreLayout from "./components/layout/StoreLayout";
+import Shop from "./pages/Shop";
 
 function ProtectedRoute({ children }) {
   const { isAuthenticated, loading } = useAuth();
@@ -36,6 +37,7 @@ function App() {
           {/*Public Routes*/}
           <Route path="/" element={<StoreLayout />}>
             <Route index element={<Home />} />
+            <Route path="shop" element={<Shop />} />
             <Route path="about" element={<About />} />
           </Route>
           {/*Login Routes*/}
