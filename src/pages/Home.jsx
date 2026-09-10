@@ -1,31 +1,11 @@
 import Button from "../components/ui/Button";
 import { ArrowDownRight } from "lucide-react";
 import Card from "../components/ui/Card";
-import ProductsList from "../components/home/ProductsList";
+import ProductsFeaturedList from "../components/home/ProductsFeaturedList";
+import { useCategories } from "../context/CategoriesContext";
 
 export default function Home() {
-  const CATEGORIES = [
-    {
-      label: "Smartphone",
-      src: "../../public/Illustrazioni/prodotto-smartphone.svg",
-    },
-    {
-      label: "Laptop",
-      src: "../../public/Illustrazioni/prodotto-laptop.svg",
-    },
-    {
-      label: "Audio",
-      src: "../../public/Illustrazioni/prodotto-cuffie.svg",
-    },
-    {
-      label: "Gaming",
-      src: "../../public/Illustrazioni/prodotto-gamepad.svg",
-    },
-    {
-      label: "Smart Home",
-      src: "../../public/Illustrazioni/prodotto-smart-home.svg",
-    },
-  ];
+  const { categories } = useCategories();
 
   return (
     <>
@@ -54,16 +34,13 @@ export default function Home() {
           </div>
         </div>
         <div className="w-1/2">
-          <img
-            src="../../public/Illustrazioni/hero-illustrazione.svg"
-            alt="hero"
-          />
+          <img src="../../public/hero/hero-illustrazione.svg" alt="hero" />
         </div>
       </section>
       {/*  CATEGORIES SECTION */}
       <section>
         <div className="flex justify-center gap-10">
-          {CATEGORIES.map((category) => (
+          {categories.map((category) => (
             <Card key={category.label} size="sm" className=" text-center">
               <img src={category.src} alt={category.label} className="w-30 " />
               <div className="relative">
@@ -75,7 +52,7 @@ export default function Home() {
         </div>
       </section>
       {/* FEATURED PRODUCTS */}
-      <ProductsList></ProductsList>
+      <ProductsFeaturedList />
     </>
   );
 }

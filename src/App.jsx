@@ -14,6 +14,7 @@ import Dashboard from "./pages/Dashboard";
 import DashboardItems from "./pages/DashboardItems";
 import StoreLayout from "./components/layout/StoreLayout";
 import Shop from "./pages/Shop";
+import { CategoriesProvider } from "./context/CategoriesContext";
 
 function ProtectedRoute({ children }) {
   const { isAuthenticated, loading } = useAuth();
@@ -32,34 +33,36 @@ function ProtectedRoute({ children }) {
 function App() {
   return (
     <AuthProvider>
-      <ProductsProvider>
-        <Routes>
-          {/*Public Routes*/}
-          <Route path="/" element={<StoreLayout />}>
-            <Route index element={<Home />} />
-            <Route path="shop" element={<Shop />} />
-            <Route path="about" element={<About />} />
-          </Route>
-          {/*Login Routes*/}
-          <Route path="/login" element={<Login />} />
+      <CategoriesProvider>
+        <ProductsProvider>
+          <Routes>
+            {/*Public Routes*/}
+            <Route path="/" element={<StoreLayout />}>
+              <Route index element={<Home />} />
+              <Route path="shop" element={<Shop />} />
+              <Route path="about" element={<About />} />
+            </Route>
+            {/*Login Routes*/}
+            <Route path="/login" element={<Login />} />
 
-          {/*Protected Dashboard Routes*/}
-          <Route
-            path="/dashboard"
-            element={
-              <ProtectedRoute>
-                <DashboardLayout />
-              </ProtectedRoute>
-            }
-          >
-            <Route index element={<Dashboard />} />
-            <Route path="items" element={<DashboardItems />} />
-          </Route>
+            {/*Protected Dashboard Routes*/}
+            <Route
+              path="/dashboard"
+              element={
+                <ProtectedRoute>
+                  <DashboardLayout />
+                </ProtectedRoute>
+              }
+            >
+              <Route index element={<Dashboard />} />
+              <Route path="items" element={<DashboardItems />} />
+            </Route>
 
-          {/*Catch all Routes*/}
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
-      </ProductsProvider>
+            {/*Catch all Routes*/}
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </ProductsProvider>
+      </CategoriesProvider>
     </AuthProvider>
   );
 }
