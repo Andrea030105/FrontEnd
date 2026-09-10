@@ -1,9 +1,11 @@
 import { Link, NavLink } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import { ShoppingCart, User } from "lucide-react";
+import { useKart } from "../../context/KartContext";
 
 function Navbar() {
   const { isAuthenticated, logout } = useAuth();
+  const { kartCount } = useKart();
 
   const labelsNavbar = [
     {
@@ -76,9 +78,14 @@ function Navbar() {
             </NavLink>
             <NavLink
               to="/"
-              className="flex ms-3 gap-3 bg-transparent border border-border rounded-2xl px-4 py-2 text-text-muted"
+              className="relative flex ms-3 gap-3 bg-transparent border border-border rounded-2xl px-4 py-2 text-text-muted"
             >
               <ShoppingCart className="text-cyan-accent" /> Cart
+              {kartCount > 0 && (
+                <span className="absolute -right-2 -top-2 flex h-5 min-w-5 items-center justify-center rounded-full bg-primary-blue px-1 text-xs text-white">
+                  {kartCount}
+                </span>
+              )}
             </NavLink>
           </>
         )}

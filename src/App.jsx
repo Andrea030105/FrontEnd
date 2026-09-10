@@ -1,6 +1,7 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 
 import { AuthProvider, useAuth } from "./context/AuthContext";
+import { ProductsProvider } from "./context/ProductsContext";
 
 import "./App.css";
 import MainLayout from "./components/layout/MainLayout";
@@ -11,6 +12,7 @@ import Login from "./pages/Login";
 
 import Dashboard from "./pages/Dashboard";
 import DashboardItems from "./pages/DashboardItems";
+import StoreLayout from "./components/layout/StoreLayout";
 
 function ProtectedRoute({ children }) {
   const { isAuthenticated, loading } = useAuth();
@@ -29,31 +31,33 @@ function ProtectedRoute({ children }) {
 function App() {
   return (
     <AuthProvider>
-      <Routes>
-        {/*Public Routes*/}
-        <Route path="/" element={<MainLayout />}>
-          <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
-        </Route>
-        {/*Login Routes*/}
-        <Route path="/login" element={<Login />} />
+      <ProductsProvider>
+        <Routes>
+          {/*Public Routes*/}
+          <Route path="/" element={<StoreLayout />}>
+            <Route index element={<Home />} />
+            <Route path="about" element={<About />} />
+          </Route>
+          {/*Login Routes*/}
+          <Route path="/login" element={<Login />} />
 
-        {/*Protected Dashboard Routes*/}
-        <Route
-          path="/dashboard"
-          element={
-            <ProtectedRoute>
-              <DashboardLayout />
-            </ProtectedRoute>
-          }
-        >
-          <Route index element={<Dashboard />} />
-          <Route path="items" element={<DashboardItems />} />
-        </Route>
+          {/*Protected Dashboard Routes*/}
+          <Route
+            path="/dashboard"
+            element={
+              <ProtectedRoute>
+                <DashboardLayout />
+              </ProtectedRoute>
+            }
+          >
+            <Route index element={<Dashboard />} />
+            <Route path="items" element={<DashboardItems />} />
+          </Route>
 
-        {/*Catch all Routes*/}
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
+          {/*Catch all Routes*/}
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </ProductsProvider>
     </AuthProvider>
   );
 }

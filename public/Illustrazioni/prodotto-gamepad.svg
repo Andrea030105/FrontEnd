@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 160">
+  <defs>
+    <linearGradient id="gp-shell" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#28374E"/>
+      <stop offset="100%" stop-color="#0E1826"/>
+    </linearGradient>
+    <linearGradient id="gp-accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22D3EE"/>
+      <stop offset="100%" stop-color="#2F6FED"/>
+    </linearGradient>
+    <radialGradient id="gp-stick" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#3A4A63"/>
+      <stop offset="100%" stop-color="#182333"/>
+    </radialGradient>
+  </defs>
+
+  <ellipse cx="100" cy="144" rx="60" ry="6" fill="#0B1B2E" opacity="0.10"/>
+
+  <g>
+    <path d="M48 70 C56 54, 74 48, 91 56 L109 56 C126 48, 144 54, 152 70 L165 98 C171 111, 165 126, 152 130 C143 133, 133 129, 126 120 L116 108 C112 103, 106 100, 100 100 C94 100, 88 103, 84 108 L74 120 C67 129, 57 133, 48 130 C35 126, 29 111, 35 98 Z" fill="url(#gp-shell)"/>
+    <path d="M52 72 C60 59, 75 54, 90 61" fill="none" stroke="#FFFFFF" stroke-opacity="0.16" stroke-width="3" stroke-linecap="round"/>
+
+    <rect x="56" y="79" width="26" height="8" rx="4" fill="#22344A"/>
+    <rect x="65" y="70" width="8" height="26" rx="4" fill="#22344A"/>
+
+    <circle cx="132" cy="79" r="6" fill="#38BDF8"/>
+    <circle cx="147" cy="92" r="6" fill="#2F6FED"/>
+    <circle cx="117" cy="92" r="6" fill="#22D3EE"/>
+    <circle cx="132" cy="105" r="6" fill="#38BDF8" opacity="0.9"/>
+
+    <circle cx="77" cy="106" r="13" fill="url(#gp-stick)"/>
+    <circle cx="77" cy="106" r="13" fill="none" stroke="#38BDF8" stroke-width="2" opacity="0.7"/>
+    <circle cx="73" cy="101" r="3" fill="#FFFFFF" opacity="0.18"/>
+
+    <circle cx="123" cy="106" r="13" fill="url(#gp-stick)"/>
+    <circle cx="123" cy="106" r="13" fill="none" stroke="#38BDF8" stroke-width="2" opacity="0.7"/>
+    <circle cx="119" cy="101" r="3" fill="#FFFFFF" opacity="0.18"/>
+
+    <rect x="88" y="70" width="24" height="6" rx="3" fill="url(#gp-accent)" opacity="0.9"/>
+    <circle cx="156" cy="76" r="1.8" fill="#7DE3F4"/>
+  </g>
+</svg>

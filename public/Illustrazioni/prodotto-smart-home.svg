@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 160">
+  <defs>
+    <linearGradient id="sh-house" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#28374E"/>
+      <stop offset="100%" stop-color="#0E1826"/>
+    </linearGradient>
+    <linearGradient id="sh-accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22D3EE"/>
+      <stop offset="100%" stop-color="#2F6FED"/>
+    </linearGradient>
+    <radialGradient id="sh-panel" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#3A4A63"/>
+      <stop offset="100%" stop-color="#182333"/>
+    </radialGradient>
+  </defs>
+
+  <ellipse cx="100" cy="144" rx="60" ry="6" fill="#0B1B2E" opacity="0.10"/>
+
+  <g>
+    <path d="M40 80 L100 34 L160 80" fill="none" stroke="url(#sh-accent)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M40 80 L100 34 L160 80" fill="none" stroke="#FFFFFF" stroke-opacity="0.22" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" transform="translate(0,-2)"/>
+
+    <path d="M54 78 V126 C54 132 58 136 64 136 H136 C142 136 146 132 146 126 V78" fill="url(#sh-house)"/>
+    <path d="M62 82 V123 C62 126 64 128 67 128" fill="none" stroke="#FFFFFF" stroke-opacity="0.12" stroke-width="3" stroke-linecap="round"/>
+
+    <rect x="84" y="93" width="32" height="24" rx="8" fill="url(#sh-panel)"/>
+    <rect x="84" y="93" width="32" height="24" rx="8" fill="none" stroke="#38BDF8" stroke-width="2" opacity="0.7"/>
+    <path d="M93 105 L100 98 L107 105 L112 95" fill="none" stroke="#7DE3F4" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <rect x="90" y="116" width="20" height="20" rx="6" fill="#17233B"/>
+    <circle cx="100" cy="127" r="2.4" fill="#7DE3F4" opacity="0.9"/>
+
+    <circle cx="69" cy="99" r="5.5" fill="#22344A"/>
+    <circle cx="131" cy="99" r="5.5" fill="#22344A"/>
+    <circle cx="69" cy="99" r="2" fill="#38BDF8" opacity="0.8"/>
+    <circle cx="131" cy="99" r="2" fill="#38BDF8" opacity="0.8"/>
+
+    <path d="M74 58 C81 50, 90 46, 100 46 C110 46, 119 50, 126 58" fill="none" stroke="#22D3EE" stroke-width="3" stroke-linecap="round" opacity="0.85"/>
+    <path d="M82 65 C87 60, 93 58, 100 58 C107 58, 113 60, 118 65" fill="none" stroke="#2F6FED" stroke-width="3" stroke-linecap="round" opacity="0.85"/>
+    <circle cx="146" cy="66" r="1.8" fill="#7DE3F4"/>
+  </g>
+</svg>
