@@ -18,7 +18,7 @@ export default function ProductsFeaturedList() {
         {itemsFeatured.map((item) => (
           <Card key={item.id} size="md" className="my-3">
             <NavLink
-              to="/product/:id"
+              to={`/product/${item.id}`}
               className="w-full flex flex-col gap-2 items-center font-semibold"
             >
               <img

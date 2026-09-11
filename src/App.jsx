@@ -4,7 +4,6 @@ import { AuthProvider, useAuth } from "./context/AuthContext";
 import { ProductsProvider } from "./context/ProductsContext";
 
 import "./App.css";
-import MainLayout from "./components/layout/MainLayout";
 import DashboardLayout from "./components/layout/DashboardLayout";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -15,6 +14,7 @@ import DashboardItems from "./pages/DashboardItems";
 import StoreLayout from "./components/layout/StoreLayout";
 import Shop from "./pages/Shop";
 import { CategoriesProvider } from "./context/CategoriesContext";
+import DetailItem from "./pages/DetailItem";
 
 function ProtectedRoute({ children }) {
   const { isAuthenticated, loading } = useAuth();
@@ -41,6 +41,7 @@ function App() {
               <Route index element={<Home />} />
               <Route path="shop" element={<Shop />} />
               <Route path="about" element={<About />} />
+              <Route path="product/:id" element={<DetailItem />} />
             </Route>
             {/*Login Routes*/}
             <Route path="/login" element={<Login />} />

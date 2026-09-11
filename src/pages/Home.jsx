@@ -1,7 +1,7 @@
 import Button from "../components/ui/Button";
 import { ArrowDownRight } from "lucide-react";
 import Card from "../components/ui/Card";
-import ProductsFeaturedList from "../components/home/ProductsFeaturedList";
+import ProductsFeaturedList from "../components/productsList/ProductsFeaturedList";
 import { useCategories } from "../context/CategoriesContext";
 import { NavLink } from "react-router-dom";
 

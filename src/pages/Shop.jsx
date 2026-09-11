@@ -1,5 +1,5 @@
 import { useSearchParams } from "react-router-dom";
-import ProductsList from "../components/home/ProductsList";
+import ProductsList from "../components/productsList/ProductsList";
 import Filters from "../components/shop/Filters";
 
 export default function Shop() {

@@ -23,7 +23,7 @@ export default function ProductsList({ categorySlug }) {
           {itemsFilter.map((item) => (
             <Card key={item.id} size="md" className="my-3">
               <NavLink
-                to="/product/:id"
+                to={`/product/${item.id}`}
                 className="w-full flex flex-col gap-2 items-center font-semibold"
               >
                 <img src={item.src} alt={item.name} className="w-30 " />
@@ -57,7 +57,7 @@ export default function ProductsList({ categorySlug }) {
         {items.map((item) => (
           <Card key={item.id} size="md" className="my-3">
             <NavLink
-              to="/product/:id"
+              to={`/product/${item.id}`}
               className="w-full flex flex-col gap-2 items-center font-semibold"
             >
               <img src={item.src} alt={item.name} className="w-30 " />
