@@ -15,6 +15,7 @@ import StoreLayout from "./components/layout/StoreLayout";
 import Shop from "./pages/Shop";
 import { CategoriesProvider } from "./context/CategoriesContext";
 import DetailItem from "./pages/DetailItem";
+import Kart from "./pages/Kart";
 
 function ProtectedRoute({ children }) {
   const { isAuthenticated, loading } = useAuth();
@@ -42,6 +43,7 @@ function App() {
               <Route path="shop" element={<Shop />} />
               <Route path="about" element={<About />} />
               <Route path="product/:id" element={<DetailItem />} />
+              <Route path="kart" element={<Kart />} />
             </Route>
             {/*Login Routes*/}
             <Route path="/login" element={<Login />} />

@@ -21,11 +21,7 @@ export default function ProductsFeaturedList() {
               to={`/product/${item.id}`}
               className="w-full flex flex-col gap-2 items-center font-semibold"
             >
-              <img
-                src="../../../public/prodotti/01-laptop-pro-15.svg"
-                alt={item.name}
-                className="w-30 "
-              />
+              <img src={item.src} alt={item.name} className="w-30 " />
               <div className="w-full my-4">
                 <h2 className="text-text-navy mb-3">{item.name}</h2>
                 <p className="text-primary-blue ">{formatPrice(item.price)}</p>

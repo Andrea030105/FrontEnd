@@ -77,7 +77,7 @@ function Navbar() {
               <User className="text-cyan-accent" /> Login
             </NavLink>
             <NavLink
-              to="/"
+              to="/kart"
               className="relative flex ms-3 gap-3 bg-transparent border border-border rounded-2xl px-4 py-2 text-text-muted"
             >
               <ShoppingCart className="text-cyan-accent" /> Cart

@@ -44,7 +44,7 @@ export default function DetailItem() {
         <p>
           <strong>Descrizione:</strong> {findItem.description}
         </p>
-        <Button onClick={addKart}>Aggiungi al carello</Button>
+        <Button onClick={() => addKart(findItem)}>Aggiungi al carello</Button>
       </div>
     </div>
   );
