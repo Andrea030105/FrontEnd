@@ -1,6 +1,25 @@
 import { useCategories } from "../../context/CategoriesContext";
+import { useSearchParams } from "react-router-dom";
+
 export default function Filters() {
   const { categories } = useCategories();
+
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const selectedCategory = searchParams.get("category");
+
+  const selectCategory = (e) => {
+    const value = e.target.value;
+
+    if (value === "") {
+      setSearchParams({});
+    } else {
+      setSearchParams({
+        category: value,
+      });
+    }
+  };
+
   return (
     <>
       <h3 className="text-text-navy font-semibold text-4xl py-4 px-7">
@@ -17,8 +36,8 @@ export default function Filters() {
         <div className="relative">
           <select
             id="category"
-            value={value}
-            onChange={selectCategory()}
+            value={selectedCategory ? selectedCategory : ""}
+            onChange={selectCategory}
             className="
             h-11 w-full appearance-none rounded-2xl
             border border-slate-200
@@ -33,10 +52,10 @@ export default function Filters() {
             cursor-pointer
           "
           >
-            <option>Tutte le categorie</option>
+            <option value="">Tutte le categorie</option>
 
             {categories.map((category) => (
-              <option key={category.label} value={category.label}>
+              <option key={category.slug} value={category.slug}>
                 {category.label}
               </option>
             ))}

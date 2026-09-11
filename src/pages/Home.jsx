@@ -3,6 +3,7 @@ import { ArrowDownRight } from "lucide-react";
 import Card from "../components/ui/Card";
 import ProductsFeaturedList from "../components/home/ProductsFeaturedList";
 import { useCategories } from "../context/CategoriesContext";
+import { NavLink } from "react-router-dom";
 
 export default function Home() {
   const { categories } = useCategories();
@@ -41,13 +42,19 @@ export default function Home() {
       <section>
         <div className="flex justify-center gap-10">
           {categories.map((category) => (
-            <Card key={category.label} size="sm" className=" text-center">
-              <img src={category.src} alt={category.label} className="w-30 " />
-              <div className="relative">
-                <h3 className="text-text-soft my-2">{category.label}</h3>
-                <ArrowDownRight className="text-text-soft absolute -bottom-1.5 left-28" />
-              </div>
-            </Card>
+            <NavLink key={category.slug} to={`/shop?category=${category.slug}`}>
+              <Card size="sm" className=" text-center">
+                <img
+                  src={category.src}
+                  alt={category.label}
+                  className="w-30 "
+                />
+                <div className="relative">
+                  <h3 className="text-text-soft my-2">{category.label}</h3>
+                  <ArrowDownRight className="text-text-soft absolute -bottom-1.5 left-28" />
+                </div>
+              </Card>
+            </NavLink>
           ))}
         </div>
       </section>
