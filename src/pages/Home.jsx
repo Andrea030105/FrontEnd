@@ -21,7 +21,7 @@ export default function Home() {
             Scopri i dispositivi che ispirano il tuo prossimo passo.
           </p>
           <div className="flex gap-5">
-            <Button as="anchor" to="#products" className="w-40 h-10">
+            <Button as="link" to="/shop" className="w-40 h-10">
               Acquista ora
             </Button>
             <Button

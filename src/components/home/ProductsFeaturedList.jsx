@@ -10,7 +10,7 @@ export default function ProductsFeaturedList() {
 
   const itemsFeatured = items.filter((item) => item.featured);
   return (
-    <section id="products" className="bg-background py-4 my-5 rounded-2xl">
+    <section className="bg-background py-4 my-5 rounded-2xl">
       <h3 className="text-text-navy font-semibold text-4xl py-4 px-7">
         Prodotti in evidenza
       </h3>
