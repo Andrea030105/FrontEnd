@@ -5,7 +5,7 @@ const KartContext = createContext();
 export function KartProvider({ children }) {
   const [kart, setKart] = useState([]);
 
-  function addKart(item) {
+  function addKart(item, quantity = 1) {
     setKart((prevKart) => {
       const existingItem = prevKart.find((kartItem) => kartItem.id === item.id);
       if (existingItem) {
@@ -13,16 +13,17 @@ export function KartProvider({ children }) {
           kartItem.id === item.id
             ? {
                 ...kartItem,
-                quantity: kartItem.quantity + 1,
+                quantity: kartItem.quantity + quantity,
               }
             : kartItem,
         );
       }
-      return [...prevKart, { ...item, quantity: 1 }];
+      return [...prevKart, { ...item, quantity: quantity }];
     });
   }
 
   function modifiedQuantityDown(item) {
+    console.log(item);
     setKart((prevKart) => {
       const findItem = prevKart.find((kartItem) => kartItem.id === item.id);
 
@@ -41,6 +42,7 @@ export function KartProvider({ children }) {
   }
 
   function modifiedQuantityUp(item) {
+    console.log(item);
     setKart((prevKart) => {
       return prevKart.map((kartItem) =>
         kartItem.id === item.id

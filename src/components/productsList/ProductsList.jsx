@@ -1,12 +1,19 @@
 import { useProducts } from "../../context/ProductsContext";
-import { useKart } from "../../context/KartContext";
 import { NavLink } from "react-router-dom";
 import Card from "../ui/Card";
 import Button from "../ui/Button";
+import { useState } from "react";
+import AddKartModal from "./AddKartModal";
 
 export default function ProductsList({ categorySlug }) {
   const { items, formatPrice } = useProducts();
-  const { addKart } = useKart();
+  const [showItemModal, setShowItemModal] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null);
+
+  const handleAddKart = (item) => {
+    setSelectedItem(item);
+    setShowItemModal(true);
+  };
 
   const slugIfy = (value) => {
     return value.trim().replace(/\s+/g, "").toLowerCase();
@@ -45,7 +52,7 @@ export default function ProductsList({ categorySlug }) {
               </NavLink>
               <Button
                 onClick={() => {
-                  addKart(item);
+                  handleAddKart(item);
                 }}
                 variant="outlineBlu"
                 className="max-md:w-full"
@@ -55,6 +62,14 @@ export default function ProductsList({ categorySlug }) {
             </Card>
           ))}
         </div>
+        <AddKartModal
+          isOpen={showItemModal}
+          onClose={() => {
+            setShowItemModal(false);
+            setSelectedItem(null);
+          }}
+          item={selectedItem}
+        />
       </>
     );
   }
@@ -86,7 +101,7 @@ export default function ProductsList({ categorySlug }) {
             </NavLink>
             <Button
               onClick={() => {
-                addKart(item);
+                handleAddKart();
               }}
               variant="outlineBlu"
               className="max-md:w-full"
@@ -96,6 +111,14 @@ export default function ProductsList({ categorySlug }) {
           </Card>
         ))}
       </div>
+      <AddKartModal
+        isOpen={showItemModal}
+        onClose={() => {
+          setShowItemModal(false);
+          setSelectedItem(null);
+        }}
+        item={selectedItem}
+      />
     </>
   );
 }

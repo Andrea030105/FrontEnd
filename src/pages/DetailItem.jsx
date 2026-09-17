@@ -1,16 +1,23 @@
 import { useParams } from "react-router-dom";
 import { useProducts } from "../context/ProductsContext";
-import { useKart } from "../context/KartContext";
 import Button from "../components/ui/Button";
 import { Loader2 } from "lucide-react";
+import { useState } from "react";
+import AddKartModal from "../components/productsList/AddKartModal";
 
 export default function DetailItem() {
-  const { addKart } = useKart();
   const { items, formatPrice, loading } = useProducts();
+  const [showItemModal, setShowItemModal] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null);
 
   const { id } = useParams();
 
   const findItem = items.find((item) => item.id === parseInt(id));
+
+  const handleAddKart = () => {
+    setSelectedItem(findItem);
+    setShowItemModal(true);
+  };
 
   if (loading) {
     return (
@@ -29,23 +36,39 @@ export default function DetailItem() {
   }
 
   return (
-    <div className="min-h-70 flex max-lg:flex-col  bg-background p-6 rounded-2xl">
-      <div className="flex-1/2 flex lg:mr-5 mb-5 items-center justify-center">
-        <img src={findItem.src} alt={findItem.name} className="max-lg:w-100" />
+    <>
+      <div className="min-h-70 flex max-lg:flex-col  bg-background p-6 rounded-2xl">
+        <div className="flex-1/2 flex lg:mr-5 mb-5 items-center justify-center">
+          <img
+            src={findItem.src}
+            alt={findItem.name}
+            className="max-lg:w-100"
+          />
+        </div>
+        <div className="flex-1/2 flex flex-col gap-5 text-lg">
+          <h2 className="text-4xl font-semibold text-center">
+            {findItem.name}
+          </h2>
+          <p>
+            <strong>Categoria:</strong> {findItem.category}
+          </p>
+          <p>
+            <strong>Prezzo:</strong> {formatPrice(findItem.price)}
+          </p>
+          <p>
+            <strong>Descrizione:</strong> {findItem.description}
+          </p>
+          <Button onClick={() => handleAddKart()}>Aggiungi al carello</Button>
+        </div>
       </div>
-      <div className="flex-1/2 flex flex-col gap-5 text-lg">
-        <h2 className="text-4xl font-semibold text-center">{findItem.name}</h2>
-        <p>
-          <strong>Categoria:</strong> {findItem.category}
-        </p>
-        <p>
-          <strong>Prezzo:</strong> {formatPrice(findItem.price)}
-        </p>
-        <p>
-          <strong>Descrizione:</strong> {findItem.description}
-        </p>
-        <Button onClick={() => addKart(findItem)}>Aggiungi al carello</Button>
-      </div>
-    </div>
+      <AddKartModal
+        isOpen={showItemModal}
+        onClose={() => {
+          setShowItemModal(false);
+          setSelectedItem(null);
+        }}
+        item={selectedItem}
+      />
+    </>
   );
 }
