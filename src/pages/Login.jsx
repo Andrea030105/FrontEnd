@@ -41,10 +41,12 @@ export default function Login() {
   };
 
   return (
-    <div className="w-screen h-screen flex justify-center items-center bg-blue-100">
-      <div className="bg-blue-300 w-100 p-5 rounded-2xl text-white text-center">
-        <h1 className="font-bold text-4xl">Login</h1>
-        <h3 className="my-2">Username: admin Password: qwerty</h3>
+    <div className="w-screen h-screen flex justify-center items-center bg-border">
+      <div className="bg-surface w-100 p-5 rounded-2xl border-2 border-primary-blue  text-center">
+        <h1 className="font-bold text-4xl text-navy-profondo">Login</h1>
+        <h3 className="my-2 text-text-soft">
+          Username: admin Password: qwerty
+        </h3>
         <form
           onSubmit={handleSubmint}
           className="flex flex-col items-center gap-3"
@@ -61,7 +63,7 @@ export default function Login() {
             value={credentials.username}
             onChange={handleChange}
             placeholder="Username"
-            className="bg-amber-50 rounded w-70 text-black p-2"
+            className="bg-border rounded w-70 text-navy-profondo p-2"
           />
           <input
             id="password"
@@ -71,17 +73,14 @@ export default function Login() {
             value={credentials.password}
             onChange={handleChange}
             placeholder="Password"
-            className="bg-amber-50 rounded w-70 text-black p-2"
+            className="bg-border rounded w-70 text-navy-profondo p-2"
           />
           <Button type="submit" loading={loading} className="w-full">
             Login
           </Button>
-          <NavLink
-            to="/"
-            className="w-full py-1.5 bg-white text-black hover:bg-gray-300  focus:ring-blue-500 inline-flex items-center justify-center font-medium rounded-md focus:outline-none focus:ring-2 hover:cursor-pointer"
-          >
+          <Button as="link" variant="outlineBlu" to="/" className="w-full">
             Home
-          </NavLink>
+          </Button>
         </form>
       </div>
     </div>
