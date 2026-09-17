@@ -19,14 +19,22 @@ export default function ProductsList({ categorySlug }) {
     return (
       <>
         {/* PRODUCTS LIST */}
-        <div className="flex flex-wrap justify-around items-center">
+        <div className="flex flex-wrap justify-around items-center px-5">
           {itemsFilter.map((item) => (
-            <Card key={item.id} size="md" className="my-3">
+            <Card
+              key={item.id}
+              size="md"
+              className="my-3  border-2 border-primary-blue max-md:w-full"
+            >
               <NavLink
                 to={`/product/${item.id}`}
                 className="w-full flex flex-col gap-2 items-center font-semibold"
               >
-                <img src={item.src} alt={item.name} className="w-30 " />
+                <img
+                  src={item.src}
+                  alt={item.name}
+                  className="w-50 max-md:w-70 "
+                />
                 <div className="w-full my-4">
                   <h2 className="text-text-navy mb-3">{item.name}</h2>
                   <p>{item.category}</p>
@@ -40,6 +48,7 @@ export default function ProductsList({ categorySlug }) {
                   addKart(item);
                 }}
                 variant="outlineBlu"
+                className="max-md:w-full"
               >
                 Aggiungi al carello
               </Button>
@@ -53,14 +62,22 @@ export default function ProductsList({ categorySlug }) {
   return (
     <>
       {/* PRODUCTS LIST */}
-      <div className="flex flex-wrap justify-around items-center">
+      <div className="flex flex-wrap justify-around items-center px-5">
         {items.map((item) => (
-          <Card key={item.id} size="md" className="my-3">
+          <Card
+            key={item.id}
+            size="md"
+            className="my-3  border-2 border-primary-blue max-md:w-full"
+          >
             <NavLink
               to={`/product/${item.id}`}
               className="w-full flex flex-col gap-2 items-center font-semibold"
             >
-              <img src={item.src} alt={item.name} className="w-30 " />
+              <img
+                src={item.src}
+                alt={item.name}
+                className="w-50 max-md:w-70 "
+              />
               <div className="w-full my-4">
                 <h2 className="text-text-navy mb-3">{item.name}</h2>
                 <p>{item.category}</p>
@@ -72,6 +89,7 @@ export default function ProductsList({ categorySlug }) {
                 addKart(item);
               }}
               variant="outlineBlu"
+              className="max-md:w-full"
             >
               Aggiungi al carello
             </Button>
