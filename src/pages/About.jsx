@@ -1,4 +1,5 @@
 import Button from "../components/ui/Button";
+import Card from "../components/ui/Card";
 
 export default function About() {
   return (
@@ -39,6 +40,38 @@ export default function About() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* STATS SECTION */}
+      <section className="flex justify-around my-20">
+        <Card
+          size="sm"
+          className="w-80 h-40 flex justify-center items-center font-semibold"
+        >
+          <p className="text-4xl text-primary-blue">10+</p>
+          <p className="text-text-soft my-4">Anni di esperienza</p>
+        </Card>
+        <Card
+          size="sm"
+          className="w-80 h-40 flex justify-center items-center font-semibold"
+        >
+          <p className="text-4xl text-primary-blue">500K+</p>
+          <p className="text-text-soft my-4">Clienti soddisfatti</p>
+        </Card>
+        <Card
+          size="sm"
+          className="w-80 h-40 flex justify-center items-center font-semibold"
+        >
+          <p className="text-4xl text-primary-blue">1.200+</p>
+          <p className="text-text-soft my-4">Prodotti in catalogo</p>
+        </Card>
+        <Card
+          size="sm"
+          className="w-80 h-40 flex justify-center items-center font-semibold"
+        >
+          <p className="text-4xl text-primary-blue">30+</p>
+          <p className="text-text-soft my-4">Paesi serviti</p>
+        </Card>
       </section>
     </div>
   );
