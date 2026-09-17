@@ -29,12 +29,12 @@ export default function DetailItem() {
   }
 
   return (
-    <div className="min-h-70 flex bg-background p-6 rounded-2xl">
-      <div className="flex-1/2 flex items-center justify-center">
-        <img src={findItem.src} alt={findItem.name} />
+    <div className="min-h-70 flex max-lg:flex-col  bg-background p-6 rounded-2xl">
+      <div className="flex-1/2 flex lg:mr-5 mb-5 items-center justify-center">
+        <img src={findItem.src} alt={findItem.name} className="max-lg:w-100" />
       </div>
       <div className="flex-1/2 flex flex-col gap-5 text-lg">
-        <h2 className="text-6xl font-semibold text-center">{findItem.name}</h2>
+        <h2 className="text-4xl font-semibold text-center">{findItem.name}</h2>
         <p>
           <strong>Categoria:</strong> {findItem.category}
         </p>
