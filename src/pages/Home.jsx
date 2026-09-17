@@ -1,63 +1,46 @@
 import Button from "../components/ui/Button";
-import { ArrowDownRight } from "lucide-react";
-import Card from "../components/ui/Card";
+
 import ProductsFeaturedList from "../components/productsList/ProductsFeaturedList";
-import { useCategories } from "../context/CategoriesContext";
-import { NavLink } from "react-router-dom";
+import CategoriesList from "../components/home/CategoriesList";
 
 export default function Home() {
-  const { categories } = useCategories();
-
   return (
     <>
       {/* HERO SECTION */}
-      <section className="flex ">
-        <div className="w-1/2 font-bold flex flex-col gap-4 justify-center items-start">
+      <section className="flex flex-col items-center gap-8 md:flex-row">
+        <div className="w-full font-bold md:flex-1 flex flex-col gap-3">
           <div>
-            <h1 className="text-8xl text-text-navy">Tecnologia </h1>
-            <h1 className="text-8xl text-primary-blue">senza limiti</h1>
+            <h1 className="text-6xl text-text-navy">Tecnologia</h1>
+            <h1 className="text-6xl text-primary-blue">senza limiti</h1>
           </div>
           <p className="text-text-soft">
             Scopri i dispositivi che ispirano il tuo prossimo passo.
           </p>
-          <div className="flex gap-5">
-            <Button as="link" to="/shop" className="w-40 h-10">
+          <div className="flex w-full gap-3">
+            <Button as="link" to="/shop" className="h-10 w-40">
               Acquista ora
             </Button>
             <Button
               as="link"
               to="/about"
-              className="w-40 h-10"
+              className="h-10 w-40"
               variant="outlineBlu"
             >
               Scopri di più
             </Button>
           </div>
         </div>
-        <div className="w-1/2">
-          <img src="../../public/hero/hero-illustrazione.svg" alt="hero" />
+        <div className="w-full min-w-0 md:flex-1">
+          <img
+            src="../../public/hero/hero-illustrazione.svg"
+            alt="hero"
+            className="h-auto w-full max-w-full object-contain"
+          />
         </div>
       </section>
       {/*  CATEGORIES SECTION */}
-      <section>
-        <div className="flex justify-center gap-10">
-          {categories.map((category) => (
-            <NavLink key={category.slug} to={`/shop?category=${category.slug}`}>
-              <Card size="sm" className=" text-center">
-                <img
-                  src={category.src}
-                  alt={category.label}
-                  className="w-30 "
-                />
-                <div className="relative">
-                  <h3 className="text-text-soft my-2">{category.label}</h3>
-                  <ArrowDownRight className="text-text-soft absolute -bottom-1.5 left-28" />
-                </div>
-              </Card>
-            </NavLink>
-          ))}
-        </div>
-      </section>
+      <CategoriesList />
+
       {/* FEATURED PRODUCTS */}
       <ProductsFeaturedList />
     </>

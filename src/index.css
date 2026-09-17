@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
 @theme {
   --color-primary-blue: #2f6fed;
   --color-primary-dark: #1e4fc4;
