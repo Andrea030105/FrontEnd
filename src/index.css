@@ -25,6 +25,11 @@ body,
 
   --color-badge-sconto-bg: #c9f7e9;
   --color-badge-sconto-testo: #0e6b54;
+  --background-image-brand-gradient: linear-gradient(
+    to right,
+    var(--gradiente-brand-from),
+    var(--gradiente-brand-to)
+  );
 }
 
 :root {
