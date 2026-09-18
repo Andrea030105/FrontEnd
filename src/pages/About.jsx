@@ -263,6 +263,24 @@ export default function About() {
           </Card>
         </div>
       </section>
+      {/* GO TO SHOP SECTION */}
+      <section>
+        <div className="bg-brand-gradient rounded-4xl p-10 text-center ">
+          <h3 className="text-surface text-4xl font-semibold">
+            Pronto a scoprire la tecnoglogia senza limiti?
+          </h3>
+          <p className="text-surface my-5">
+            Scopri il catalogo TechNova e trova il dispositivo perfetto per te.
+          </p>
+          <Button
+            size="lg"
+            variant="lightPrimary"
+            className="text-primary-blue font-semibold w-50"
+          >
+            Vai allo shop
+          </Button>
+        </div>
+      </section>
     </div>
   );
 }
