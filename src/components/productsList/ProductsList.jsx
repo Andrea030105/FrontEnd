@@ -25,7 +25,7 @@ export default function ProductsList({ categorySlug }) {
     );
     return (
       <>
-        {/* PRODUCTS LIST */}
+        {/* PRODUCTS FILTERED LIST */}
         <div className="flex flex-wrap justify-around items-center px-5">
           {itemsFilter.map((item) => (
             <Card
@@ -101,7 +101,7 @@ export default function ProductsList({ categorySlug }) {
             </NavLink>
             <Button
               onClick={() => {
-                handleAddKart();
+                handleAddKart(item);
               }}
               variant="outlineBlu"
               className="max-md:w-full"
