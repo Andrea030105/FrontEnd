@@ -1,5 +1,6 @@
 import Button from "../components/ui/Button";
 import Card from "../components/ui/Card";
+import { Check } from "lucide-react";
 
 export default function About() {
   return (
@@ -41,7 +42,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
       {/* STATS SECTION */}
       <section className="flex justify-around my-20">
         <Card
@@ -72,6 +72,66 @@ export default function About() {
           <p className="text-4xl text-primary-blue">30+</p>
           <p className="text-text-soft my-4">Paesi serviti</p>
         </Card>
+      </section>
+      {/* STORY SECTION */}
+      <section className="flex">
+        <div className="flex-1/2">
+          <div className="relative h-120 flex justify-center items-center bg-background p-6 rounded-4xl">
+            <div className="px-4 h-20 bg-surface flex items-center justify-center gap-2 font-semibold rounded-4xl absolute bottom-6 left-7 shadow-xl/30">
+              <div className="w-10 border border-primary-blue rounded-full text-primary-blue p-2  shadow-navy-profondo">
+                <Check />
+              </div>
+              <div>
+                <p className="uppercase text-sm text-text-soft">
+                  team technova
+                </p>
+                <p>Dal 2016</p>
+              </div>
+            </div>
+            <img
+              src="/public/about/story-laptop.svg"
+              alt="laptop"
+              className="w-100"
+            />
+            <img
+              src="/public/about/story-plant.svg"
+              alt="plant"
+              className="w-40 absolute right-0 bottom-9"
+            />
+          </div>
+        </div>
+        <div className="flex-1/2">
+          <div className="flex  flex-col gap-5 p-10">
+            <div className="uppercase text-sm text-primary-blue font-semibold px-4 py-2 rounded-2xl border border-primary-blue w-50">
+              la nostra storia
+            </div>
+            <h3 className="text-4xl text-navy-profondo font-semibold">
+              Nata da un'idea semplice
+            </h3>
+            <p className="text-text-soft text-lg">
+              TechNova nasce nel 2016 dall'idea di tre amici appasionati di
+              tecnologia, stanchi di scegliere tra prezzo, qualità e assistenza.
+              Oggi selezioniamo ogni prodotto a mano, lo testiamo davvero e lo
+              raccontiamo con trasparenza, prima di venderlo.
+            </p>
+            <ul>
+              <li className="flex items-center my-3">
+                <div className="w-10 border border-green-700 text-green-800 bg-green-200 rounded-full p-2  shadow-navy-profondo">
+                  <Check />
+                </div>
+                <span className="ms-3">
+                  Spedizione in 24h su tutto il catalogo
+                </span>
+              </li>
+              <li className="flex items-center">
+                <div className="w-10 border border-green-700 text-green-800 bg-green-200 rounded-full p-2  shadow-navy-profondo">
+                  <Check />
+                </div>
+                <span className="ms-3">Reso gratuito entro 30 giorni</span>
+              </li>
+            </ul>
+          </div>
+        </div>
       </section>
     </div>
   );
