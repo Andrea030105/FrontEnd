@@ -1,0 +1,14 @@
+<svg width="600" height="180" viewBox="0 0 600 180" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="brandGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22D3EE"/>
+      <stop offset="100%" stop-color="#7DD3FC"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(20,30)">
+    <rect x="0" y="0" width="120" height="120" rx="28" fill="#FFFFFF"/>
+    <path d="M32 88 V32 L88 88 V32" fill="none" stroke="#17233B" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="88" cy="32" r="7" fill="#17233B"/>
+  </g>
+  <text x="168" y="112" font-family="Sora, 'Segoe UI', sans-serif" font-weight="700" font-size="64" fill="#FFFFFF">Tech<tspan fill="url(#brandGrad2)">Nova</tspan></text>
+</svg>

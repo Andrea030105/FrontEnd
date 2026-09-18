@@ -1,0 +1,16 @@
+<svg width="488" height="300" viewBox="0 0 488 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="wave" x1="0" y1="0" x2="488" y2="220" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22D3EE" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#2F6FED" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="translate(355 74) rotate(125) scale(284 284)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#38BDF8" stop-opacity=".10"/>
+      <stop offset="1" stop-color="#38BDF8" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <path d="M0 0H448C470 0 488 18 488 40V225C365 169 212 155 0 156V0Z" fill="url(#wave)"/>
+  <circle cx="355" cy="74" r="220" fill="url(#glow)"/>
+  <circle cx="355" cy="74" r="126" stroke="#38BDF8" stroke-opacity=".12"/>
+  <circle cx="355" cy="74" r="86" stroke="#38BDF8" stroke-opacity=".10"/>
+</svg>

@@ -149,7 +149,7 @@ export default function About() {
             Ciò che guida ogni nostra decisione, ogni giorno.
           </p>
         </div>
-        <div className="flex justify-between max-xl:justify-center gap-6 flex-wrap">
+        <div className="flex justify-between max-xl:justify-center 2xl:gap-0 gap-6 flex-wrap">
           <Card
             size="sm"
             className="w-90 h-60 flex justify-center items-start gap-3 p-8 font-semibold"
@@ -218,7 +218,7 @@ export default function About() {
             Persone vere, appasionate di tecnologia quanto te.
           </p>
         </div>
-        <div className="flex justify-between max-xl:justify-center gap-6 flex-wrap">
+        <div className="flex justify-between max-xl:justify-center 2xl:gap-0 gap-6 flex-wrap">
           <Card
             size="sm"
             className="w-90 h-60 flex justify-center  gap-3 p-8 font-semibold"
