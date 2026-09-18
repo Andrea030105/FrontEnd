@@ -43,7 +43,7 @@ export default function About() {
         </div>
       </section>
       {/* STATS SECTION */}
-      <section className="flex justify-around my-20">
+      <section className="flex justify-between my-20">
         <Card
           size="sm"
           className="w-80 h-40 flex justify-center items-center font-semibold"
@@ -131,6 +131,75 @@ export default function About() {
               </li>
             </ul>
           </div>
+        </div>
+      </section>
+      {/* VALUES SECTION */}
+      <section className="my-20">
+        <div className="text-center">
+          <h3 className="text-4xl font-semibold text-navy-profondo">
+            I nostri valori
+          </h3>
+          <p className="text-2xl text-text-soft my-6">
+            Ciò che guida ogni nostra decisione, ogni giorno.
+          </p>
+        </div>
+        <div className="flex justify-between">
+          <Card
+            size="sm"
+            className="w-90 h-60 flex justify-center items-start gap-3 p-8 font-semibold"
+          >
+            <img
+              src="/public/about/icon-quality.svg"
+              alt="iconQuality"
+              className="w-15"
+            />
+            <p className="text-2xl text-navy-profondo">Qualità Garantita</p>
+            <p className="text-text-soft  text-sm">
+              Ogni prodotto passa attraverso controlli qualità rigorosi.
+            </p>
+          </Card>
+          <Card
+            size="sm"
+            className="w-90 h-60 flex justify-center items-start gap-3 p-8 font-semibold"
+          >
+            <img
+              src="/public/about/icon-innovation.svg"
+              alt="iconInnovation"
+              className="w-15"
+            />
+            <p className="text-2xl text-navy-profondo">Innovazione Costante</p>
+            <p className="text-text-soft  text-sm">
+              Selezioniamo solo tecnologie davvero all'avanguardia.
+            </p>
+          </Card>
+          <Card
+            size="sm"
+            className="w-90 h-60 flex justify-center items-start gap-3 p-8 font-semibold"
+          >
+            <img
+              src="/public/about/icon-sustainability.svg"
+              alt="iconSustainability"
+              className="w-15"
+            />
+            <p className="text-2xl text-navy-profondo">Sostenibilità</p>
+            <p className="text-text-soft  text-sm">
+              Packaging riciclabile e logistica a basso impatto.
+            </p>
+          </Card>
+          <Card
+            size="sm"
+            className="w-90 h-60 flex justify-center items-start gap-3 p-8 font-semibold"
+          >
+            <img
+              src="/public/about/icon-support.svg"
+              alt="iconSupport"
+              className="w-15"
+            />
+            <p className="text-2xl text-navy-profondo">Assistenza Dedicata</p>
+            <p className="text-text-soft  text-sm">
+              Un team reale pronto ad aiutarti in ogni fase.
+            </p>
+          </Card>
         </div>
       </section>
     </div>
