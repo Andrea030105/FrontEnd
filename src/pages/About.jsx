@@ -202,6 +202,67 @@ export default function About() {
           </Card>
         </div>
       </section>
+      {/* TEAM SECTION */}
+      <section className="my-20">
+        <div className="text-center">
+          <h3 className="text-4xl font-semibold text-navy-profondo">
+            Il team dietro TechNova
+          </h3>
+          <p className="text-2xl text-text-soft my-6">
+            Persone vere, appasionate di tecnologia quanto te.
+          </p>
+        </div>
+        <div className="flex justify-between">
+          <Card
+            size="sm"
+            className="w-90 h-60 flex justify-center  gap-3 p-8 font-semibold"
+          >
+            <img
+              src="/public/about/avatar-giulia-bianchi.svg"
+              alt="avatarGiulia"
+              className="w-15"
+            />
+            <p className="text-2xl text-navy-profondo">Giulia Bianchi</p>
+            <p className="text-text-soft  text-sm">CEO & Founder</p>
+          </Card>
+          <Card
+            size="sm"
+            className="w-90 h-60 flex justify-center  gap-3 p-8 font-semibold"
+          >
+            <img
+              src="/public/about/avatar-marco-rossi.svg"
+              alt="avatarMarco"
+              className="w-15"
+            />
+            <p className="text-2xl text-navy-profondo">Marco Rossi</p>
+            <p className="text-text-soft  text-sm">CTO</p>
+          </Card>
+          <Card
+            size="sm"
+            className="w-90 h-60 flex justify-center  gap-3 p-8 font-semibold"
+          >
+            <img
+              src="/public/about/avatar-sara-conti.svg"
+              alt="avatarSara"
+              className="w-15"
+            />
+            <p className="text-2xl text-navy-profondo">Sara Conti</p>
+            <p className="text-text-soft  text-sm">Head of Design</p>
+          </Card>
+          <Card
+            size="sm"
+            className="w-90 h-60 flex justify-center  gap-3 p-8 font-semibold"
+          >
+            <img
+              src="/public/about/avatar-luca-ferrari.svg"
+              alt="avatarLuca"
+              className="w-15"
+            />
+            <p className="text-2xl text-navy-profondo">Luca Ferrari</p>
+            <p className="text-text-soft  text-sm">Customer Success</p>
+          </Card>
+        </div>
+      </section>
     </div>
   );
 }
