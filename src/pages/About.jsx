@@ -6,7 +6,7 @@ export default function About() {
   return (
     <div>
       {/* HERO SECTION */}
-      <section className="flex mt-10">
+      <section className="flex mt-10 max-xl:flex-col">
         <div className="flex-1/2 flex flex-col gap-3 justify-center">
           <div>
             <div className="uppercase text-sm text-primary-blue font-semibold px-4 py-2 rounded-2xl border border-primary-blue w-30">
@@ -25,25 +25,31 @@ export default function About() {
           </Button>
         </div>
         <div className="flex-1/2 flex justify-center ">
-          <div className="relative">
+          <div className="relative mx-auto mt-10 w-60 sm:w-80 lg:w-100">
             <img
-              src="../../public/about/hero-globe.svg"
-              alt="hero"
-              className="w-100"
+              src="/about/hero-globe.svg"
+              alt="Globo digitale TechNova"
+              className="h-auto w-full"
             />
-            <div className="bg-surface uppercase  font-semibold px-4 py-2 rounded-2xl  w-50 absolute top-6 left-80">
-              <p className="text-sm text-text-soft">clienti soddisfatti</p>
-              <p className="text-2xl">500k+</p>
+
+            <div className="absolute left-0 top-4 z-10 w-28 -translate-x-1/4 rounded-2xl bg-surface px-3 py-2 font-semibold uppercase shadow-lg sm:top-8 sm:w-50 sm:px-4 lg:-translate-x-1/2">
+              <p className="text-[10px] text-text-soft sm:text-sm">
+                Clienti soddisfatti
+              </p>
+              <p className="text-lg text-text-navy sm:text-2xl">500k+</p>
             </div>
-            <div className="bg-surface uppercase  font-semibold px-4 py-2 rounded-2xl  w-50 absolute bottom-6 right-80">
-              <p className="text-sm text-text-soft">paesi serviti</p>
-              <p className="text-2xl">30+</p>
+
+            <div className="absolute bottom-4 right-0 z-10 w-24 translate-x-1/4 rounded-2xl bg-surface px-3 py-2 font-semibold uppercase shadow-lg sm:bottom-8 sm:w-40 sm:px-4 lg:translate-x-1/2">
+              <p className="text-[10px] text-text-soft sm:text-sm">
+                Paesi serviti
+              </p>
+              <p className="text-lg text-text-navy sm:text-2xl">30+</p>
             </div>
           </div>
         </div>
       </section>
       {/* STATS SECTION */}
-      <section className="flex justify-between my-20">
+      <section className="flex justify-between max-xl:justify-center gap-6 flex-wrap my-20">
         <Card
           size="sm"
           className="w-80 h-40 flex justify-center items-center font-semibold"
@@ -74,7 +80,7 @@ export default function About() {
         </Card>
       </section>
       {/* STORY SECTION */}
-      <section className="flex">
+      <section className="flex max-lg:flex-col">
         <div className="flex-1/2">
           <div className="relative h-120 flex justify-center items-center bg-background p-6 rounded-4xl">
             <div className="px-4 h-20 bg-surface flex items-center justify-center gap-2 font-semibold rounded-4xl absolute bottom-6 left-7 shadow-xl/30">
@@ -143,7 +149,7 @@ export default function About() {
             Ciò che guida ogni nostra decisione, ogni giorno.
           </p>
         </div>
-        <div className="flex justify-between">
+        <div className="flex justify-between max-xl:justify-center gap-6 flex-wrap">
           <Card
             size="sm"
             className="w-90 h-60 flex justify-center items-start gap-3 p-8 font-semibold"
@@ -212,7 +218,7 @@ export default function About() {
             Persone vere, appasionate di tecnologia quanto te.
           </p>
         </div>
-        <div className="flex justify-between">
+        <div className="flex justify-between max-xl:justify-center gap-6 flex-wrap">
           <Card
             size="sm"
             className="w-90 h-60 flex justify-center  gap-3 p-8 font-semibold"
@@ -266,13 +272,15 @@ export default function About() {
       {/* GO TO SHOP SECTION */}
       <section>
         <div className="bg-brand-gradient rounded-4xl p-10 text-center ">
-          <h3 className="text-surface text-4xl font-semibold">
+          <h3 className="text-surface text-4xl max-sm:text-2xl font-semibold">
             Pronto a scoprire la tecnoglogia senza limiti?
           </h3>
           <p className="text-surface my-5">
             Scopri il catalogo TechNova e trova il dispositivo perfetto per te.
           </p>
           <Button
+            as="link"
+            to="/shop"
             size="lg"
             variant="lightPrimary"
             className="text-primary-blue font-semibold w-50"
