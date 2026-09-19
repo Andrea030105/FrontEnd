@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import { useProducts } from "../../context/ProductsContext";
 import Card from "../ui/Card";
 import Button from "../ui/Button";
-import AddKartModal from "./AddKartModal";
+import AddKartModal from "../kart/AddKartModal";
 import { useState } from "react";
 
 export default function ProductsFeaturedList() {

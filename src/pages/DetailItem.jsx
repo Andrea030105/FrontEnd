@@ -3,7 +3,7 @@ import { useProducts } from "../context/ProductsContext";
 import Button from "../components/ui/Button";
 import { Loader2 } from "lucide-react";
 import { useState } from "react";
-import AddKartModal from "../components/productsList/AddKartModal";
+import AddKartModal from "../components/kart/AddKartModal";
 
 export default function DetailItem() {
   const { items, formatPrice, loading } = useProducts();

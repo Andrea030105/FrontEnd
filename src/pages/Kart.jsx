@@ -2,7 +2,7 @@ import { Trash } from "lucide-react";
 import Button from "../components/ui/Button";
 import { useKart } from "../context/KartContext";
 import { useProducts } from "../context/ProductsContext";
-import DeleteKartModal from "../components/productsList/DeleteKartModal";
+import DeleteKartModal from "../components/kart/DeleteKartModal";
 import { useState } from "react";
 
 export default function Kart() {

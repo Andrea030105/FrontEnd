@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import Card from "../ui/Card";
 import Button from "../ui/Button";
 import { useState } from "react";
-import AddKartModal from "./AddKartModal";
+import AddKartModal from "../kart/AddKartModal";
 
 export default function ProductsList({ categorySlug }) {
   const { items, formatPrice } = useProducts();
