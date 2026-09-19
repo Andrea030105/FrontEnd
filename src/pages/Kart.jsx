@@ -2,16 +2,21 @@ import { Trash } from "lucide-react";
 import Button from "../components/ui/Button";
 import { useKart } from "../context/KartContext";
 import { useProducts } from "../context/ProductsContext";
+import DeleteKartModal from "../components/productsList/DeleteKartModal";
+import { useState } from "react";
 
 export default function Kart() {
   const { formatPrice } = useProducts();
-  const {
-    modifiedQuantityDown,
-    modifiedQuantityUp,
-    remouveKart,
-    kart,
-    kartCount,
-  } = useKart();
+  const { modifiedQuantityDown, modifiedQuantityUp, kart, kartCount } =
+    useKart();
+
+  const [showItemModal, setShowItemModal] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null);
+
+  const handleRemuveKart = (item) => {
+    setSelectedItem(item);
+    setShowItemModal(true);
+  };
 
   const subtotal = kart.reduce(
     (total, item) => total + item.price * item.quantity,
@@ -85,11 +90,19 @@ export default function Kart() {
                   type="button"
                   variant="danger"
                   size="sm"
-                  onClick={() => remouveKart(item)}
+                  onClick={() => handleRemuveKart(item)}
                   aria-label="Rimuovi prodotto"
                 >
                   <Trash size={16} />
                 </Button>
+                <DeleteKartModal
+                  isOpen={showItemModal}
+                  onClose={() => {
+                    setShowItemModal(false);
+                    setSelectedItem(null);
+                  }}
+                  item={selectedItem}
+                />
               </div>
             </div>
           </div>
