@@ -139,7 +139,7 @@ export default function Kart() {
           </div>
         </div>
 
-        <Button as="link" to="/pagamento" className="mt-6 w-full">
+        <Button as="link" to="/pay" className="mt-6 w-full">
           Vai al pagamento
         </Button>
       </div>

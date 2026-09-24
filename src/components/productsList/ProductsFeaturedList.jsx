@@ -28,7 +28,7 @@ export default function ProductsFeaturedList() {
             <Card
               key={item.id}
               size="md"
-              className="my-3   max-md:w-full border-primary-blue border-1"
+              className="my-3   max-md:w-full border-primary-blue border"
             >
               <NavLink
                 to={`/product/${item.id}`}
