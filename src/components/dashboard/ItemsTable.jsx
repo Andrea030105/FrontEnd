@@ -3,8 +3,6 @@ import { Pencil } from "lucide-react";
 import { Trash } from "lucide-react";
 
 export default function ItemsTable({ items, onEdit, onDelete }) {
-  console.log(items);
-
   if (items.length === 0) {
     return <h1>No items yet</h1>;
   }
