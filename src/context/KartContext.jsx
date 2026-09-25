@@ -58,8 +58,13 @@ export function KartProvider({ children }) {
     });
   }
 
+  function clearKart() {
+    setKart([]);
+  }
+
   const value = {
     addKart,
+    clearKart,
     modifiedQuantityDown,
     modifiedQuantityUp,
     remouveKart,

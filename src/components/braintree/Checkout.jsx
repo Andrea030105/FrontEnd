@@ -2,17 +2,38 @@ import dropin from "braintree-web-drop-in";
 import { useEffect, useRef, useState } from "react";
 import { api } from "../../services/api";
 import Button from "../ui/Button";
+import { useKart } from "../../context/KartContext";
+import { Navigate, useNavigate } from "react-router-dom";
 
-export default function Checkout() {
+export default function Checkout({ billing, validateBilling }) {
   const dropinContainerRef = useRef(null);
+  const paymentInProgressRef = useRef(false);
 
   const [clientToken, setClientToken] = useState(null);
   const [instance, setInstance] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [paying, setPaying] = useState(false);
-  const [paymentError, setPaymentError] = useState("");
-  const [successMessage, setSuccessMessage] = useState("");
+  const [paymentCompleted, setPaymentCompleted] = useState(false);
+
+  const { kart, clearKart } = useKart();
+
+  const navigate = useNavigate();
+
+  const isBillingComplete = () => {
+    const requiredFields = [
+      "name",
+      "surname",
+      "email",
+      "address",
+      "city",
+      "cap",
+    ];
+
+    return requiredFields.every((field) => {
+      return billing?.[field]?.trim();
+    });
+  };
 
   useEffect(() => {
     let mounted = true;
@@ -100,34 +121,80 @@ export default function Checkout() {
   }, [clientToken]);
 
   const handlePayment = async () => {
-    if (!instance) {
-      setPaymentError("Il modulo di pagamento non è ancora pronto.");
+    if (paymentInProgressRef.current) {
+      console.warn("Pagamento già in corso.");
       return;
     }
 
+    const isFormValid = validateBilling();
+
+    if (!isFormValid) {
+      console.error("Pagamento bloccato: form incompleto.");
+      return;
+    }
+
+    if (!billing || !isBillingComplete()) {
+      console.error(
+        "Pagamento bloccato: tutti i campi del form sono obbligatori.",
+      );
+      return;
+    }
+
+    if (!instance) {
+      console.error("Il modulo di pagamento non è ancora pronto.");
+      return;
+    }
+
+    if (!kart || kart.length === 0) {
+      console.error("Il carrello è vuoto.");
+      return;
+    }
+
+    paymentInProgressRef.current = true;
     setPaying(true);
-    setPaymentError("");
-    setSuccessMessage("");
 
     try {
       const paymentMethod = await instance.requestPaymentMethod();
 
-      console.log("Metodo di pagamento ricevuto:", paymentMethod);
-      console.log("Nonce ricevuto:", paymentMethod.nonce);
+      const response = await api.post("/braintree/checkout", {
+        paymentMethodNonce: paymentMethod.nonce,
+        items: kart.map((item) => ({
+          productId: item.id,
+          quantity: item.quantity,
+        })),
+        billing,
+      });
 
-      setSuccessMessage("Metodo di pagamento valido. Nonce generato.");
+      if (!response.success) {
+        console.error(
+          "Pagamento rifiutato:",
+          response.message || "Payment failed",
+        );
+        return;
+      }
+
+      setPaymentCompleted(true);
+      clearKart();
+      navigate("/paymentDone", {
+        replace: true,
+        state: {
+          paymentCompleted: true,
+          order: response.order,
+        },
+      });
     } catch (paymentRequestError) {
-      console.error("Errore nel recupero del nonce:", paymentRequestError);
-
-      setPaymentError(
-        paymentRequestError instanceof Error
-          ? paymentRequestError.message
-          : "Inserisci dati di pagamento validi.",
-      );
+      console.error("Errore durante il pagamento:", paymentRequestError);
     } finally {
+      paymentInProgressRef.current = false;
       setPaying(false);
     }
   };
+
+  if ((!kart || kart.length === 0) && !paymentCompleted) {
+    console.error("Accesso al checkout negato: il carrello è vuoto.");
+
+    return <Navigate to="/Kart" replace />;
+  }
 
   if (loading) {
     return <p>Caricamento metodo di pagamento...</p>;
@@ -150,14 +217,6 @@ export default function Checkout() {
       >
         {paying ? "Elaborazione..." : "Paga"}
       </Button>
-
-      {paymentError && (
-        <p className="mt-3 text-sm text-red-600">{paymentError}</p>
-      )}
-
-      {successMessage && (
-        <p className="mt-3 text-sm text-green-600">{successMessage}</p>
-      )}
     </section>
   );
 }
